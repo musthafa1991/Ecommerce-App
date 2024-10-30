@@ -406,3 +406,16 @@ export async function deleteProduct(productId) {
     throw error;
   }
 }
+
+export async function fetchAllUsers() {
+  try {
+    const response = await axios.get(
+      `${API_URL}/users/getAllUsers`,
+      getAuthHeaders()
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
+}

@@ -31,7 +31,7 @@ const adminSidebarMenuItems = [
   { name: "Settings", path: "/admin/settings", icon: <FaCog /> },
   { name: "Feedback", path: "/admin/feedback", icon: <FaComments /> },
   { name: "Integrations", path: "/admin/integrations", icon: <FaPlug /> },
-  { name: "Security", path: "/admin/security", icon: <FaShieldAlt /> },
+  { name: "Security", path: "/admin/security", icon: <FaShieldAlt /> }, 
 ];
 
 const AdminSideBar = () => {
