@@ -5,12 +5,16 @@ import axios from "axios";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    !!localStorage.getItem("user")
-  );
+  const initialUser = (() => {
+    try {
+      return JSON.parse(localStorage.getItem("user")) || null;
+    } catch {
+      return null;
+    }
+  })();
+
+  const [user, setUser] = useState(initialUser);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!initialUser);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,8 +34,8 @@ export const AuthProvider = ({ children }) => {
         userData
       );
       setUser(response.data.user);
-      setIsAuthenticated(true);
-      navigate("/");
+      setIsAuthenticated(false);
+      navigate("/auth/login");
     } catch (error) {
       console.error("Registration error:", error.response.data);
     }
@@ -43,7 +47,7 @@ export const AuthProvider = ({ children }) => {
         "http://localhost:5000/api/auth/login",
         credentials
       );
-      let { token } = response.data.user;
+      const { token } = response.data.user;
       setUser(response.data.user);
       setIsAuthenticated(true);
       localStorage.setItem("token", token);

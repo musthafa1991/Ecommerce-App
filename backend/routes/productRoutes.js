@@ -16,6 +16,7 @@ router.post("/", authMiddleware, createProduct);
 router.get("/", getProducts);
 router.get("/:id", getProductById);
 router.put("/:id", authMiddleware, updateProduct);
+router.delete("/:id", authMiddleware, deleteProduct);
 router.post("/upload-image", upload.single("my_file"), handleImageUpload);
 
 module.exports = router;

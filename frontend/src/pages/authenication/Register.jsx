@@ -1,16 +1,15 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 const Register = () => {
   const { register } = useAuth();
-  const [username, setUsername] = useState("");
+  const [name, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
-    register({ username, email, password });
+    register({ name, email, password });
   };
 
   return (
@@ -19,9 +18,9 @@ const Register = () => {
       <form onSubmit={handleRegister} className="space-y-4">
         <input
           type="text"
-          value={username}
+          value={name}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
+          placeholder="name"
           className="w-full p-2 border rounded"
         />
         <input
