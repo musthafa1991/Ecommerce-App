@@ -7,7 +7,7 @@ Here's a README file template for your eCommerce project that covers an overview
 ## Overview
 
 This is a full-stack eCommerce application built using the **MERN stack (MongoDB, Express, React, Node.js)** and styled with **Tailwind CSS** and **ShadCN UI**. The project includes essential features like product listing, user authentication, cart management with notifications, and a User Management dashboard for admin functionalities.
-Note: This project is currently a work in progress. Some features may not be fully implemented, and further improvements are ongoing.Most of api creation for user,order,product and authentication at backend is over, 
+## Note: This project is currently a work in progress. Some features may not be fully implemented, and further improvements are ongoing.Most of api creation for user,order,product and authentication at backend is over, 
 ## Features
 
 - **User Authentication:** Secure login, registration, and logout using JWT tokens.
@@ -47,20 +47,20 @@ Ensure you have the following installed:
    - Create a `.env` file in both in `backend` directories.
    - Add the following environment variables:
 
-   #### For Server (`server/.env`)
+   #### For backend (`backend/.env`)
 
-   ```env
-  PORT=5000
-MONGO_URI=your_mongo_url
-JWT_SECRET=your_jwt_secret
-EMAIL_SERVICE=Gmail
-EMAIL_USERNAME=your_email@gmail.com
-EMAIL_PASSWORD=your_password
-EMAIL_FROM=your_email@gmail.com
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET =your_secret_key
-   ```
+ 
+- PORT=5000
+- MONGO_URI=your_mongo_url
+- JWT_SECRET=your_jwt_secret
+- EMAIL_SERVICE=Gmail
+- EMAIL_USERNAME=your_email@gmail.com
+- EMAIL_PASSWORD=your_password
+- EMAIL_FROM=your_email@gmail.com
+- CLOUDINARY_CLOUD_NAME=your_cloud_name
+- CLOUDINARY_API_KEY=your_api_key
+- CLOUDINARY_API_SECRET =your_secret_key
+ 
 
 
 ### Backend Setup (Server)
