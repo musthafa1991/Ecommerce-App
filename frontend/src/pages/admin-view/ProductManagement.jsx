@@ -50,11 +50,9 @@ function ProductManagement() {
     }
   };
 
-
   useEffect(() => {
     loadProducts();
   }, []);
-
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -70,7 +68,7 @@ function ProductManagement() {
         toast({ title: "Product added successfully", status: "success" });
       }
       resetForm();
-      loadProducts(); 
+      loadProducts();
     } catch (error) {
       toast({ title: "Error saving product", status: "error" });
     }
@@ -80,6 +78,8 @@ function ProductManagement() {
     setFormData(initialFormData);
     setOpenCreateProductsDialog(false);
     setCurrentEditedId(null);
+    setImageFile(null);
+    setUploadedImageUrl("");
   }
 
   async function handleDelete(productId) {
@@ -91,7 +91,7 @@ function ProductManagement() {
       toast({ title: "Error deleting product", status: "error" });
     }
   }
-  
+
   function isFormValid() {
     return Object.keys(formData)
       .filter((key) => key !== "averageReview")
